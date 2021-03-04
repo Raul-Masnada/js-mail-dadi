@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>eMail</title>
+  </head>
+
+  <body>
+    <h1 id="accesso"></h1>
+    <h1 id="gioco"></h1>
+    <h1 id="vincitore"></h1>
+
+
+    <script>
+
+      var credenziali = prompt("Inserisci E-mail ")
+      var eMail = ["raul.masnada.sf@gmail.com" ]
+
+      for (var i = 0; i < eMail.length; i++) {
+
+        if (credenziali === eMail[i]) {
+          console.log ("Benvenuto. La tua Mail: "  + eMail[i] + " è corretta.");
+          document.getElementById('accesso').innerHTML = "Benvenuto. La tua Mail: "  + eMail[i] + " è corretta."
+
+          i = eMail.length;
+        }
+        else if (i== eMail.length - 1){
+          alert("Non pui accedere");
+        }
+      }
+
+
+      var min = 0;
+      var max = 6 - min;
+      var computer = Math.floor(Math.random() * max) + min + 1;
+      var player = Math.floor(Math.random() * max) + min + 1;
+
+      document.getElementById('gioco').innerHTML = "TU: " + player + " Computer: " + computer;
+      console.log("TU: " + player + " Computer: " + computer);
+      if (player>computer) {
+
+        document.getElementById('vincitore').innerHTML = "HAI VINTO";
+        console.log("HAI VINTO");
+      } else if (player==computer){
+
+        document.getElementById('vincitore').innerHTML = "RITENTA";
+        console.log("RITENTA");
+      } else {
+
+        document.getElementById('vincitore').innerHTML = "HAI PERSO";
+        console.log("HAI PERSO");
+      }
+
+    </script>
+  </body>
+</html>
